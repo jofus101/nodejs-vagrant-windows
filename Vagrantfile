@@ -123,6 +123,8 @@ Vagrant.configure('2') do |config|
     ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 
     config.vm.provider :virtualbox do |virtualbox|
+      virtualbox.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant","1"]
+
       data['vm']['provider']['virtualbox']['modifyvm'].each do |key, value|
         if key == 'memory'
           next
