@@ -197,6 +197,7 @@ nodejs:
     install: '1'
     npm_packages:
         - gulp
+        - bower
 python:
     install: '1'
     packages: {  }
